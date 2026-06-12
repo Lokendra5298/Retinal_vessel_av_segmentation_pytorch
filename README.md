@@ -1,10 +1,10 @@
-# Retinal Vessel + Artery/Vein Segmentation using PyTorch 🔴
+# Retinal Vessel + Artery/Vein Segmentation using PyTorch
 
 A comprehensive deep learning repository for **retinal blood vessel segmentation** and **artery/vein classification** from fundus images. This project implements and compares multiple state-of-the-art architectures using PyTorch and `segmentation_models_pytorch`.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Key Features](#-key-features)
@@ -36,7 +36,7 @@ Retinal blood vessel segmentation is a crucial preprocessing step in automated o
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 - ✅ **Multi-Model Comparison**: U-Net, U-Net++, ResNetV2, GAN-based approaches
 - ✅ **Multi-Task Learning**: Both binary and multi-class segmentation
@@ -44,13 +44,12 @@ Retinal blood vessel segmentation is a crucial preprocessing step in automated o
 - ✅ **Advanced Data Augmentation**: Synchronized image-mask transformations
 - ✅ **Hybrid Loss Functions**: Combined CrossEntropy + Dice + Adversarial losses
 - ✅ **Cross-Dataset Evaluation**: Generalization testing across DRIVE, CHASE DB1, HRF, FIVES
-- ✅ **Production-Ready**: Model checkpoints, visualization tools, inference pipelines
 - ✅ **Jupyter Notebooks**: Clean, well-documented, easy to follow
 - ✅ **Medical Imaging Metrics**: Dice, IoU, Sensitivity, Specificity, AUC, HD95
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 Retinal_vessel_av_segmentation_pytorch/
@@ -75,7 +74,7 @@ Retinal_vessel_av_segmentation_pytorch/
 
 ---
 
-## 📊 Datasets
+## Datasets
 
 The repository supports training and evaluation on multiple public retinal datasets:
 
@@ -109,7 +108,7 @@ datasets/
 
 ---
 
-## 🧠 Models Implemented
+## Models Implemented
 
 ### Module 1: Binary Vessel Segmentation
 
@@ -170,7 +169,7 @@ datasets/
 
 ---
 
-## 📈 Performance & Predictions
+## Performance & Predictions
 
 ### Example Results on DRIVE Dataset
 
@@ -208,7 +207,7 @@ Input Fundus Image →
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -251,7 +250,7 @@ python -c "import segmentation_models_pytorch as smp; print('segmentation_models
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Binary Vessel Segmentation
 
@@ -289,7 +288,7 @@ Both notebooks include prediction visualization:
 
 ---
 
-## 📖 Detailed Usage
+## Detailed Usage
 
 ### Binary Segmentation Workflow
 
@@ -349,7 +348,7 @@ vein_dice = dice(predictions[..., 2], ground_truth[..., 2])
 
 ---
 
-## 🔍 Evaluation Metrics
+## Evaluation Metrics
 
 All models use standard medical image segmentation metrics:
 
@@ -385,7 +384,7 @@ Boundary quality metric (lower is better) ✅
 
 ---
 
-## 🎯 Training Tips
+## Training Tips
 
 1. **Data Augmentation**: Use strong augmentation (rotation, elastic deformation, color jitter)
 2. **Class Weights**: Weight background lower due to imbalance
@@ -397,7 +396,7 @@ Boundary quality metric (lower is better) ✅
 
 ---
 
-## 📚 References & Citations
+## References & Citations
 
 ### Key Papers
 
@@ -411,84 +410,3 @@ Boundary quality metric (lower is better) ✅
 - DRIVE: Vessel segmentation challenge
 - CHASE DB1: Multi-observer vessel segmentation
 - Retinal Vessel Segmentation Challenge (Kaggle)
-
----
-
-## 📝 How to Cite
-
-If you use this repository in your research, please cite:
-
-```bibtex
-@repository{retinal_vessel_av_segmentation_pytorch,
-  author = {Lokendra5298},
-  title = {Retinal Vessel + Artery/Vein Segmentation using PyTorch},
-  year = {2026},
-  url = {https://github.com/Lokendra5298/Retinal_vessel_av_segmentation_pytorch}
-}
-```
-
----
-
-## 🛠️ Troubleshooting
-
-### Issue: CUDA Out of Memory
-**Solution**: Reduce batch size, use mixed precision, or enable gradient checkpointing
-
-### Issue: Poor Artery/Vein Classification
-**Solution**: Check label quality, increase class weights, use U-Net++ for better boundaries
-
-### Issue: Slow Training
-**Solution**: Enable mixed precision with `torch.cuda.amp`, use smaller patches, reduce data augmentation
-
-### Issue: Model Doesn't Converge
-**Solution**: Check learning rate, verify data normalization, inspect loss function weights
-
----
-
-## 📞 Support & Contribution
-
-### Report Issues
-Found a bug? Open an [issue](https://github.com/Lokendra5298/Retinal_vessel_av_segmentation_pytorch/issues)
-
-### Contribute
-Want to improve? Submit a [pull request](https://github.com/Lokendra5298/Retinal_vessel_av_segmentation_pytorch/pulls)
-
-### Discussions
-Ask questions in [discussions](https://github.com/Lokendra5298/Retinal_vessel_av_segmentation_pytorch/discussions)
-
----
-
-## 📄 License
-
-This repository is released under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## ⭐ Show Your Support
-
-If this repository helped your research, consider:
-- ⭐ Starring the repository
-- 🔗 Citing in your work
-- 📢 Sharing with the community
-- 🤝 Contributing improvements
-
----
-
-**Last Updated**: June 2026  
-**Maintainer**: [Lokendra5298](https://github.com/Lokendra5298)
-
----
-
-## 🎯 Future Roadmap
-
-- [ ] Add Vision Transformer (ViT) encoder support
-- [ ] Implement 3D vessel segmentation (OCT-A)
-- [ ] Add real-time inference optimization
-- [ ] Create web interface for predictions
-- [ ] Support more datasets (STARE, ARIA, VARIA)
-- [ ] Add explainability methods (Grad-CAM)
-- [ ] Publish trained model weights on Hugging Face
-
----
-
-**Made with ❤️ for the medical imaging community**
